@@ -4,6 +4,8 @@ import fs from 'fs';
 
 export const isString = val => typeof val === 'string';
 
+export const isArray = val => Array.isArray(val);
+
 export const printRow = (str, {
     color = 'green',
     lineDown = 1,

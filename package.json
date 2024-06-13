@@ -1,12 +1,12 @@
 {
-  "name": "grapesjs-echarts",
+  "name": "grapesjs-echarts-fix",
   "version": "0.0.20",
   "description": "Grapesjs Echarts",
   "main": "dist/grapesjs-echarts.min.js",
-  "author": "Julio Vasconez",
+  "author": "Marco Polello",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jvas28/grapesjs-echarts.git"
+    "url": "https://github.com/marcopolello/grapesjs-echarts-fix.git"
   },
   "scripts": {
     "start": "webpack-dev-server --open --watch",
@@ -42,9 +42,11 @@
   },
   "license": "MIT",
   "dependencies": {
+    "clean-webpack-plugin": "^4.0.0",
     "echarts": "^4.9.0",
     "lodash": "^4.17.20",
     "sass": "^1.77.5",
-    "vue": "^2.6.12"
+    "vue": "^2.6.12",
+    "yarn": "^1.22.22"
   }
 }

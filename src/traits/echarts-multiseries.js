@@ -1,11 +1,13 @@
 import SeriesSelector from "../vue/multiseries-selector.vue";
+
 export default {
-  // Expects as return a simple HTML string or an HTML element
   noLabel: true,
+
   createInput({ component }) {
     const editor = component.em.get("Editor");
     const intl = editor.I18n;
     const { Vue } = editor;
+
     const vueInstance = new Vue({
       render: (h) =>
         h(SeriesSelector, {
@@ -16,11 +18,13 @@ export default {
           },
         }),
     }).$mount();
+
     const [inputInstance] = vueInstance.$children;
     this.inputInstance = inputInstance;
+
     return vueInstance.$el;
   },
-  // Update the component based element changes
+
   onEvent({ component }) {
     const { series, theme } = this.inputInstance;
     component.addAttributes({
@@ -28,14 +32,17 @@ export default {
       "data-ecg-theme": theme,
     });
   },
+
   onUpdate({ component }) {
     const series = component.getAttributes()["data-ecg-series"] || null;
     const theme = component.getAttributes()["data-ecg-theme"] || null;
 
-    if (this?.inputInstance) {
+    if (this.inputInstance) {
       if (series) {
-        this?.inputInstance?.series = JSON.parse(series);
-        this?.inputInstance?.theme = theme;
+        this.inputInstance.series = JSON.parse(series);
+      }
+      if (theme) {
+        this.inputInstance.theme = theme;
       }
     }
   },

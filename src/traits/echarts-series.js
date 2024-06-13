@@ -33,9 +33,11 @@ export default {
     const series = component.getAttributes()["data-ecg-series"] || null;
     const theme = component.getAttributes()["data-ecg-theme"] || null;
 
-    if (series) {
-      this.inputInstance.series = JSON.parse(series);
-      this.inputInstance.theme = theme;
+    if (this.inputInstance) {
+      if (series) {
+        this.inputInstance.series = JSON.parse(series);
+        this.inputInstance.theme = theme;
+      } 
     }
   },
 };
