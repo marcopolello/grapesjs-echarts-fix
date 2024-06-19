@@ -22,7 +22,15 @@ export default {
   },
   // Update the component based element changes
   onEvent({ component }) {
+    if (!this.inputInstance) {
+      console.error("inputInstance is not defined");
+      return;
+    }
     const { series, theme } = this.inputInstance;
+    if (!series) {
+      console.error("inputInstance.series is not defined");
+      return;
+    }
     component.addAttributes({
       "data-ecg-series": JSON.stringify(series),
       "data-ecg-theme": theme,

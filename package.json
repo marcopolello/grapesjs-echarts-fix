@@ -1,6 +1,6 @@
 {
   "name": "grapesjs-echarts-fix",
-  "version": "0.0.21",
+  "version": "0.0.23",
   "description": "Grapesjs Echarts",
   "main": "dist/grapesjs-echarts.min.js",
   "author": "Marco Polello",
